@@ -1,7 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'next/link';
-import { useState } from 'react';
-
 
 const NavContainer = styled.nav`
   background: var(--deep-blue);
@@ -12,6 +10,11 @@ const NavContainer = styled.nav`
   padding: 0 2rem;
   height: 80px;
   font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
 `;
 
 const LogoContainer = styled.div`
@@ -19,76 +22,68 @@ const LogoContainer = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.h1`
+const Logo = styled.a`
   font-size: 2rem;
-  color: var(--text-electric-green);
   font-weight: 400;
-  margin: 0 0 0 20px;
+  margin: 0;
   cursor: pointer;
+  background: linear-gradient(to right, var(--text-electric-orange), var(--text-electric-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
 `;
 
 const OwnerName = styled.div`
   font-size: 1.5rem;
   color: var(--text-light);
   font-style: italic;
-  margin-left: 10px; 
+  margin-left: 10px;
 `;
 
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
+`;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-    display: ${props => props.isOpen ? 'flex' : 'none'};
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background: var(--deep-blue);
-    padding: 10px;
-    align-items: center;
+const StyledLink = styled.a`
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 10px;
+  font-size: 1.25rem;
+  transition: color 0.3s, transform 0.3s;
 
-    a {
-      padding: 10px;
-      margin: 5px 0;
-      width: 100%;
-      text-align: center;
-      font-size: 1.25rem; // Increased font size for visibility
-    }
+  &:hover {
+    color: var(--electric-orange);
+    transform: scale(1.05);
   }
 
-  a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 10px;
-    font-size: 1.25rem; // Increased font size for desktop links
-    transition: color 0.3s;
+  &:active {
+    transform: scale(0.95);
+  }
 
-    &:hover {
-      color: var(--electric-orange);
-    }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--electric-blue);
   }
 `;
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <NavContainer>
-            <LogoContainer>
-                <Logo>KalistenicEMS</Logo>
-                <OwnerName>Krystian Kalista</OwnerName>
-            </LogoContainer>
-            <NavLinks isOpen={isOpen}>
-                <Link href="/">Strona główna</Link>
-                <Link href="/about">O nas</Link>
-                <Link href="/services">Usługi</Link>
-                <Link href="/contact">Kontakt</Link>
-            </NavLinks>
-        </NavContainer>
-    );
-};
+const Navbar = () => (
+    <NavContainer>
+        <LogoContainer>
+            <Link href="/" passHref>
+                <Logo as="a">KalistenicEMS</Logo>
+            </Link>
+            <OwnerName>Krystian Kalista</OwnerName>
+        </LogoContainer>
+        <NavLinks>
+            <Link href="/" passHref><StyledLink as="a">Strona główna</StyledLink></Link>
+            <Link href="/about" passHref><StyledLink as="a">O nas</StyledLink></Link>
+            <Link href="/services" passHref><StyledLink as="a">Usługi</StyledLink></Link>
+            <Link href="/contact" passHref><StyledLink as="a">Kontakt</StyledLink></Link>
+        </NavLinks>
+    </NavContainer>
+);
 
 export default Navbar;

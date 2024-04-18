@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ServicesSection = styled.section`
-  background: #f0f0f0;
+  background: var(--deep-blue);
   padding: 2rem;
 `;
 
 const Service = styled.div`
-  background: white;
+  background: var(--electric-blue);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 1rem;
   margin-top: 1rem;

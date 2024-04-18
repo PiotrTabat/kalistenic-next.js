@@ -3,11 +3,18 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   :root {
     --deep-blue: #000118;
-    --electric-orange: #ff370d;
+    --green: #1e7e04;
+    --electric-red: #FF0000;
+    --electric-orange: #FF4500;
+    --electric-yellow: #FFD700;
+    --electric-green: #00FF00;
+    --electric-blue: #007FFF;
     --metallic-silver: #BDC3C7;
     --text-light: #ffffff;
     --text-dark: #34495E;
     --text-electric-green: #00FF00;
+    --text-electric-blue: #007FFF;
+    --text-electric-orange: #FF4500;
   }
 
   body {
@@ -19,29 +26,26 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: var(--electric-orange);
+    color: var(--electric-red);
   }
 
   a {
-    color: var(--electric-orange);
+    color: var(--text-light);
     text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
 
     &:hover {
       color: var(--metallic-silver);
+      transform: scale(1.05);
     }
-  }
 
-  button {
-    background-color: var(--electric-orange);
-    color: var(--deep-blue);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    &:active {
+      transform: scale(0.95);
+    }
 
-    &:hover {
-      background-color: var(--metallic-silver);
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--electric-blue);
     }
   }
 `;
