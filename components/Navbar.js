@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NavContainer = styled.nav`
   background: var(--deep-blue);
@@ -23,22 +24,31 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.a`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  margin: 0;
-  cursor: pointer;
   background: linear-gradient(to right, var(--text-electric-orange), var(--text-electric-blue));
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
   text-decoration: none;
+  cursor: pointer;
+`;
+
+const LogoImage = styled.div`
+  width: 60px;
+  height: 60px;
+  margin-left: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(2) translateY(12px); 
+  }
 `;
 
 const OwnerName = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--text-light);
-  font-style: italic;
-  margin-left: 10px;
 `;
 
 const NavLinks = styled.div`
@@ -50,8 +60,8 @@ const StyledLink = styled.a`
   color: var(--text-light);
   text-decoration: none;
   margin-left: 20px;
-  padding: 10px;
-  font-size: 1.25rem;
+  padding: 5px;
+  font-size: 1.3rem;
   transition: color 0.3s, transform 0.3s;
 
   &:hover {
@@ -73,15 +83,19 @@ const Navbar = () => (
     <NavContainer>
         <LogoContainer>
             <Link href="/" passHref>
-                <Logo as="a">KalistenicEMS</Logo>
+                <Logo>KalistenicEMS</Logo>
             </Link>
+            <LogoImage>
+                <Image src="/images/KrystianLogo.png" alt="Krystian Kalista Logo" width={60} height={60} />
+            </LogoImage>
             <OwnerName>Krystian Kalista</OwnerName>
         </LogoContainer>
         <NavLinks>
-            <Link href="/" passHref><StyledLink as="a">Strona główna</StyledLink></Link>
-            <Link href="/about" passHref><StyledLink as="a">O nas</StyledLink></Link>
-            <Link href="/services" passHref><StyledLink as="a">Usługi</StyledLink></Link>
-            <Link href="/contact" passHref><StyledLink as="a">Kontakt</StyledLink></Link>
+            <Link href="/" passHref><StyledLink>Strona główna</StyledLink></Link>
+            <Link href="/about" passHref><StyledLink>O mnie</StyledLink></Link>
+            <Link href="/services" passHref><StyledLink>Usługi</StyledLink></Link>
+            <Link href="/prices" passHref><StyledLink>Cennik</StyledLink></Link>
+            <Link href="/contact" passHref><StyledLink>Kontakt</StyledLink></Link>
         </NavLinks>
     </NavContainer>
 );

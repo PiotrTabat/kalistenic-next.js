@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const AboutContainer = styled.div`
+const AboutContainer = styled.section`  // Zmiana z div na section
   background: var(--dark-blue);
   color: var(--text-light);
   padding: 50px 20px;
@@ -18,10 +18,10 @@ const Paragraph = styled.p`
   margin: 20px auto;
 `;
 
-const About = () => {
+const AboutContent = () => {
     return (
         <AboutContainer>
-            <Title>O KalistenicEMS</Title>
+            <Title>O mnie</Title>
             <Paragraph>
                 W KalistenicEMS wierzymy, że fitness może stać się przyjemnym i osiągalnym elementem Twojego codziennego życia. Nasz główny trener, Krystian Kalista, jest certyfikowanym instruktorem EMS z ponad dekadą doświadczenia w pomaganiu klientom w osiągnięciu ich najlepszej formy fizycznej. Z wykształceniem w dziedzinie nauk o sporcie i pasją do zdrowia, Krystian Kalista łączy tradycyjne techniki fitness z innowacyjną technologią elektrostymulacji mięśniowej (EMS).
             </Paragraph>
@@ -35,4 +35,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default AboutContent;

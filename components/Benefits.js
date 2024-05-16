@@ -22,7 +22,7 @@ const BenefitsContainer = styled.div`
   width: 100vw;
   background: linear-gradient(to right, var(--dark-blue), var(--electric-blue));
   color: var(--text-light);
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const TitleContainer = styled.div`
@@ -33,8 +33,10 @@ const TitleContainer = styled.div`
 
 const ChartAndContentContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-grow: 1;
+    width: 100%;
+  
 `;
 
 const BenefitsContent = styled.div`
@@ -47,7 +49,6 @@ const BenefitsContent = styled.div`
 const ChartContainer = styled.div`
   width: 70%;
   background: var(--deep-blue);
-  padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
@@ -83,28 +84,35 @@ const data = {
     ]
 };
 
-const Benefits = () => {
+const Benefits = React.memo(() => {
     const chartRef = useRef(null);
 
     const options = {
         scales: {
+            x: {
+                ticks: {
+                    color: "white",
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0,
+                    font: {
+                        size: 14
+                    }
+                }
+            },
             y: {
                 beginAtZero: true,
                 title: {
                     display: true,
                     text: 'Skuteczność (%)',
-                    color: 'white'
+                    color: 'white',
+                    font: {
+                        size: 16
+                    }
                 },
                 ticks: {
                     color: "white",
-                }
-            },
-            x: {
-                ticks: {
-                    color: "white",
-                    autoSkip: false,
-                    maxRotation: 15,
-                    minRotation: 15
+                    stepSize: 10
                 }
             }
         },
@@ -112,7 +120,10 @@ const Benefits = () => {
             legend: {
                 display: true,
                 labels: {
-                    color: 'white'
+                    color: 'white',
+                    font: {
+                        size: 16
+                    }
                 }
             }
         },
@@ -125,6 +136,7 @@ const Benefits = () => {
         }
     };
 
+
     return (
         <BenefitsContainer>
             <TitleContainer>
@@ -133,15 +145,15 @@ const Benefits = () => {
             <ChartAndContentContainer>
                 <BenefitsContent>
                     <Benefit>
-                        <FontAwesomeIcon icon={faBolt} color="#FFD700" />
+                        <FontAwesomeIcon icon={faBolt} color="#FFD700" aria-label="Szybkie rezultaty" />
                         <h3>Szybkie rezultaty</h3>
                     </Benefit>
                     <Benefit>
-                        <FontAwesomeIcon icon={faUserShield} color="#007FFF" />
+                        <FontAwesomeIcon icon={faUserShield} color="#007FFF" aria-label="Bezpieczne dla stawów" />
                         <h3>Bezpieczne dla stawów</h3>
                     </Benefit>
                     <Benefit>
-                        <FontAwesomeIcon icon={faHeartbeat} color="#00FF00" />
+                        <FontAwesomeIcon icon={faHeartbeat} color="#00FF00" aria-label="Personalizowane treningi" />
                         <h3>Personalizowane treningi</h3>
                     </Benefit>
                 </BenefitsContent>
@@ -151,6 +163,6 @@ const Benefits = () => {
             </ChartAndContentContainer>
         </BenefitsContainer>
     );
-};
+});
 
 export default Benefits;

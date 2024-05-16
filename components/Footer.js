@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <FooterContainer>
             © 2024 KalistenicEMS. Wszystkie prawa zastrzeżone.
-            <div>Znajdź nas na [Social Media Icons]</div>
+            <div>Znajdź nas na [Social Media]</div>
         </FooterContainer>
     );
 };

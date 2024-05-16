@@ -1,23 +1,26 @@
-import styled from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
+import styled from 'styled-components';
+import heroImg from '../public/images/hero.png';
 
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90vh; 
-  padding: 0 10%;
+  height: 90vh;
+  padding: 0 7%;
   color: var(--text-light);
   text-align: center;
-  margin-top: 80px; 
+  margin-top: 80px;
 `;
 
 const HeroContent = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
 `;
 
 const HeroImageContainer = styled.div`
@@ -25,6 +28,9 @@ const HeroImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    object-fit: cover;  
+  }
 `;
 
 const Title = styled.h1`
@@ -52,8 +58,8 @@ const ActionButton = styled.button`
     background-color: var(--green);
     transform: scale(1.01);
   }
-  
-&:active {
+
+  &:active {
     transform: scale(0.99);
   }
 `;
@@ -63,15 +69,17 @@ const Hero = () => (
         <HeroContent>
             <Title>Silniejszy i Szybszy z Technologią EMS</Title>
             <Subtitle>Zdobądź przewagę dzięki nowoczesnym metodom treningowym.</Subtitle>
-            <ActionButton>Zapisz się na trening</ActionButton>
+            <Link href="/contact" passHref>
+                <ActionButton as="a">Zapisz się na trening</ActionButton>
+            </Link>
         </HeroContent>
         <HeroImageContainer>
             <Image
-                src="/hero.png"
+                src={heroImg}
                 alt="EMS Training"
                 width={600}
-                height={700}
-                layout="responsive"
+                height={600}
+                priority
             />
         </HeroImageContainer>
     </HeroContainer>
