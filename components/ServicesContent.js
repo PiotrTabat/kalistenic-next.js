@@ -1,38 +1,132 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ServicesSection = styled.section`
   background: var(--deep-blue);
-  padding: 2rem;
+  padding: 1rem 5%;
+  color: var(--text-light);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const ServicesTitle = styled.h2`
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: var(--electric-green);
+`;
+
+const ServiceList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.8rem;
 `;
 
 const Service = styled.div`
-  background: var(--deep-blue);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 calc(30% - 1rem);
+  background: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+  }
+`;
+
+const ServiceTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--electric-green);
+`;
+
+const ServiceDescription = styled.p`
+  font-size: 0.9rem;
+  color: var(--text-light);
+`;
+
+const DetailedDescription = styled.div`
+  font-size: 0.9rem;
+  color: var(--text-light);
   margin-top: 1rem;
+  max-height: 100px;
+  overflow: auto;
+  opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const ServicesContent = () => {
+    const [openService, setOpenService] = useState(null);
+
+    const handleMouseEnter = (index) => {
+        setOpenService(index);
+    };
+
+    const handleMouseLeave = () => {
+        setOpenService(null);
+    };
+
+    const services = [
+        {
+            title: "Trening EMS",
+            description: "Trening EMS z osobistym trenerem.",
+            detailedDescription: "Trening EMS wykorzystuje technologię elektrostymulacji mięśniowej, aby maksymalizować wyniki w krótszym czasie."
+        },
+        {
+            title: "Trening personalny klasyczny",
+            description: "Klasyczny trening z trenerem personalnym.",
+            detailedDescription: "Tradycyjne metody treningowe dostosowane do Twoich indywidualnych potrzeb i celów."
+        },
+        {
+            title: "Masaż sportowy",
+            description: "Regeneracja po wysiłku fizycznym.",
+            detailedDescription: "Masaż sportowy pomaga zredukować napięcia mięśniowe i przyspieszyć proces regeneracji."
+        },
+        {
+            title: "Masaż klasyczny",
+            description: "Relaks i regeneracja.",
+            detailedDescription: "Masaż klasyczny złagodzi stres i napięcie, poprawiając krążenie oraz ogólny stan zdrowia."
+        },
+        {
+            title: "Masaż relaksacyjny",
+            description: "Głębokie odprężenie i redukcja stresu.",
+            detailedDescription: "Masaż relaksacyjny wprowadzi Cię w stan głębokiego odprężenia."
+        },
+        {
+            title: "Terapia manualna",
+            description: "Leczenie dysfunkcji narządu ruchu.",
+            detailedDescription: "Terapia manualna polega na diagnostyce i leczeniu dysfunkcji narządu ruchu za pomocą technik manualnych."
+        }
+    ];
+
     return (
         <ServicesSection>
-            <h2>Usługi</h2>
-            <Service>
-                <h3>Indywidualny trening EMS</h3>
-                <p>Skoncentruj się na swoich celach z osobistym trenerem, który dostosuje trening EMS do Twoich potrzeb.</p>
-            </Service>
-            <Service>
-                <h3>trening personalny</h3>
-                <p>Dołącz do grupowych sesji EMS i trenuj w motywującej atmosferze z innymi entuzjastami fitnessu.</p>
-            </Service>
-            <Service>
-                <h3>Masaże</h3>
-                <p>Dołącz do grupowych sesji EMS i trenuj w motywującej atmosferze z innymi entuzjastami fitnessu.</p>
-            </Service>
-            <Service>
-                <h3>Dodatkowe treningi z dojazdem</h3>
-                <p>Dołącz do grupowych sesji EMS i trenuj w motywującej atmosferze z innymi entuzjastami fitnessu.</p>
-            </Service>
+            <ServicesTitle>Usługi</ServicesTitle>
+            <ServiceList>
+                {services.map((service, index) => (
+                    <Service
+                        key={index}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <ServiceTitle>{service.title}</ServiceTitle>
+                        <ServiceDescription>{service.description}</ServiceDescription>
+                        <DetailedDescription $isOpen={openService === index}>
+                            {service.detailedDescription}
+                        </DetailedDescription>
+                    </Service>
+                ))}
+            </ServiceList>
         </ServicesSection>
     );
 };

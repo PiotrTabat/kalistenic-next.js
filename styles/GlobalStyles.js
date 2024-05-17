@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     --text-electric-green: #00FF00;
     --text-electric-blue: #007FFF;
     --text-electric-orange: #FF4500;
+    --dark-gray: rgba(0, 0, 0, 0.67);
   }
 
   body {

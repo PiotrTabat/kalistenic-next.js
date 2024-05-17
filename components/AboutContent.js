@@ -1,38 +1,78 @@
+import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
+import krystianLogo from '../public/images/KrystianLogo.jpeg';
 
-const AboutContainer = styled.section`  // Zmiana z div na section
-  background: var(--dark-blue);
+const AboutSection = styled.section`
+  background: var(--deep-blue);
+  padding: 2rem 10%;
   color: var(--text-light);
-  padding: 50px 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
 `;
 
-const Title = styled.h2`
-  color: var(--electric-yellow);
+const AboutTitle = styled.h2`
+  font-size: 2.8rem;
+  color: var(--electric-red);
+  margin-bottom: 1rem;
 `;
 
-const Paragraph = styled.p`
-  font-size: 1.2rem;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const ImageContainer = styled.div`
+  flex: 1;
+  max-width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const AboutDescription = styled.div`
+  flex: 2;
+  font-size: 1.25rem;
   line-height: 1.6;
+  text-align: justify;
   max-width: 800px;
-  margin: 20px auto;
+  text-indent: 2rem;
 `;
 
-const AboutContent = () => {
-    return (
-        <AboutContainer>
-            <Title>O mnie</Title>
-            <Paragraph>
-                W KalistenicEMS wierzymy, że fitness może stać się przyjemnym i osiągalnym elementem Twojego codziennego życia. Nasz główny trener, Krystian Kalista, jest certyfikowanym instruktorem EMS z ponad dekadą doświadczenia w pomaganiu klientom w osiągnięciu ich najlepszej formy fizycznej. Z wykształceniem w dziedzinie nauk o sporcie i pasją do zdrowia, Krystian Kalista łączy tradycyjne techniki fitness z innowacyjną technologią elektrostymulacji mięśniowej (EMS).
-            </Paragraph>
-            <Paragraph>
-                Trening EMS to metoda naukowo potwierdzona, pozwalająca osiągnąć szybsze i bardziej znaczące rezultaty w budowaniu mięśni, tonizacji oraz ogólnej kondycji. Wysyłając łagodne impulsy elektryczne do mięśni podczas ćwiczeń, EMS stymuluje głębsze warstwy mięśni, które są trudne do aktywacji poprzez tradycyjne ćwiczenia. Ta technika nie tylko sprawia, że Twoje treningi są bardziej efektywne, ale także znacznie krótsze — osiągniesz w 20 minut to, co normalnie zajęłoby kilka godzin na siłowni.
-            </Paragraph>
-            <Paragraph>
-                Dołącz do nas w KalistenicEMS, aby doświadczyć, jak nowoczesna technologia spotyka się z tradycyjnym fitness, tworząc coś naprawdę transformującego dla Twojego zdrowia i ciała.
-            </Paragraph>
-        </AboutContainer>
-    );
-};
+const AboutContent = () => (
+    <AboutSection>
+        <AboutTitle>O mnie</AboutTitle>
+        <ContentWrapper>
+            <ImageContainer>
+                <Image src={krystianLogo} alt="Krystian Kalista" />
+            </ImageContainer>
+            <AboutDescription>
+                <p>
+                    Magister wychowania fizycznego, absolwent studiów podyplomowych z przygotowania motorycznego oraz fizjoterapii w sporcie.
+                    Licencjonowany trener personalny, trener EMS i masażysta. Uczestnik wielu szkoleń branżowych oraz szkoleniowiec treningu EMS.
+                    Posiadam bogate doświadczenie zawodowe zdobyte przez lata współpracy z podopiecznymi. Charakteryzuję się indywidualnym podejściem do
+                    każdego ćwiczącego, dbaniem o pozytywną atmosferę podczas zajęć oraz utrzymywaniem dobrego kontaktu poza nimi. Jestem pasjonatem górskich wypraw
+                    rowerowych i pieszych, spływów kajakowych oraz aktywności na świeżym powietrzu. Interesuję się piłką nożną, gotowaniem i historią.
+                </p>
+            </AboutDescription>
+        </ContentWrapper>
+    </AboutSection>
+);
 
 export default AboutContent;

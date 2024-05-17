@@ -96,7 +96,7 @@ const Benefits = React.memo(() => {
                     maxRotation: 0,
                     minRotation: 0,
                     font: {
-                        size: 14
+                        size: 12
                     }
                 }
             },

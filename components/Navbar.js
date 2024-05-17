@@ -26,28 +26,38 @@ const LogoContainer = styled.div`
 const Logo = styled.a`
   font-size: 2.5rem;
   font-weight: 400;
-  background: linear-gradient(to right, var(--text-electric-orange), var(--text-electric-blue));
+  background: linear-gradient(to right, var(--text-electric-green), var(--text-electric-orange));
   -webkit-background-clip: text;
   color: transparent;
   text-decoration: none;
   cursor: pointer;
-`;
-
-const LogoImage = styled.div`
-  width: 60px;
-  height: 60px;
-  margin-left: 60px;
-  border-radius: 50%;
-  cursor: pointer;
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(2) translateY(12px); 
+    background: linear-gradient(to right, var(--text-electric-orange), var(--text-electric-green));
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scale(1.1);
+  }
+`;
+
+const LogoImage = styled.div`
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.5);
   }
 `;
 
 const OwnerName = styled.div`
   font-size: 1.8rem;
+  margin-left: 10px;
   color: var(--text-light);
 `;
 
@@ -65,17 +75,12 @@ const StyledLink = styled.a`
   transition: color 0.3s, transform 0.3s;
 
   &:hover {
-    color: var(--electric-orange);
+    color: var(--electric-green);
     transform: scale(1.05);
   }
 
   &:active {
     transform: scale(0.95);
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--electric-blue);
   }
 `;
 
@@ -86,7 +91,7 @@ const Navbar = () => (
                 <Logo>KalistenicEMS</Logo>
             </Link>
             <LogoImage>
-                <Image src="/images/KrystianLogo.png" alt="Krystian Kalista Logo" width={60} height={60} />
+                <Image src="/images/KrystianLogo1.png" alt="Krystian Kalista Logo" width={50} height={50} />
             </LogoImage>
             <OwnerName>Krystian Kalista</OwnerName>
         </LogoContainer>
