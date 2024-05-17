@@ -10,12 +10,20 @@ const ServicesSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 1rem 5%;
+  }
 `;
 
 const ServicesTitle = styled.h2`
   font-size: 2.4rem;
   margin-bottom: 3rem;
   color: var(--electric-green);
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const ServiceList = styled.div`
@@ -23,6 +31,10 @@ const ServiceList = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 0.8rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Service = styled.div`
@@ -48,11 +60,19 @@ const ServiceTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--electric-green);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ServiceDescription = styled.p`
   font-size: 0.9rem;
   color: var(--text-light);
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const DetailedDescription = styled.div`
@@ -63,6 +83,10 @@ const DetailedDescription = styled.div`
   overflow: auto;
   opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ServicesContent = () => {

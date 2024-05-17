@@ -6,6 +6,10 @@ const FooterContainer = styled.footer`
   text-align: center;
   background: var(--deep-blue);
   color: var(--text-light);
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const Footer = () => {

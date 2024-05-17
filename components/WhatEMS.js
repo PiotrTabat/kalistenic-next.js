@@ -11,12 +11,20 @@ const EMSSection = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 5%;
+  }
 `;
 
 const EMSTitle = styled.h2`
   font-size: 2.8rem;
   color: var(--electric-red);
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const EMSDescription = styled.div`
@@ -28,6 +36,11 @@ const EMSDescription = styled.div`
   p {
     margin-bottom: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-indent: 1rem;
+  }
 `;
 
 const EMSBenefits = styled.ul`
@@ -37,6 +50,11 @@ const EMSBenefits = styled.ul`
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
 `;
 
 const EMSSectionTitle = styled.h3`
@@ -44,6 +62,10 @@ const EMSSectionTitle = styled.h3`
   color: var(--electric-green);
   margin-top: 2rem;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const EMSListItem = styled.li`
@@ -64,6 +86,15 @@ const TwoColumnGrid = styled.div`
     font-size: 1.4rem;
     margin-bottom: 2rem;
     color: var(--electric-orange);
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
   }
 `;
 

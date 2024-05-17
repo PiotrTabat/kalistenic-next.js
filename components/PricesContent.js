@@ -13,6 +13,10 @@ const PricesSection = styled.section`
   gap: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 1rem 5%;
+  }
 `;
 
 const PricesTitle = styled.h2`
@@ -23,6 +27,10 @@ const PricesTitle = styled.h2`
   position: relative;
   display: inline-block;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const PriceList = styled.ul`
@@ -34,6 +42,10 @@ const PriceList = styled.ul`
   width: 100%;
   max-width: 800px;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const PriceItem = styled.li`
@@ -53,18 +65,30 @@ const PriceItem = styled.li`
     background: var(--electric-red);
     transform: translateY(-3px);
   }
+  
+    @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    }
 `;
 
 const PriceLabel = styled.span`
   font-size: 1.3rem;
   flex: 1;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const PriceAmount = styled.span`
   font-size: 1.3rem;
   flex: 0 0 auto;
   color: var(--electric-green);
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const AdditionalInfo = styled.p`
@@ -79,6 +103,11 @@ const AdditionalInfo = styled.p`
   padding: 0.75rem 1rem;
   border-radius: 10px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    width: 100%;
+  }
 `;
 
 const PricesContent = () => (

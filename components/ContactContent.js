@@ -16,6 +16,7 @@ const ContactSection = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    padding: 1rem 5%;
   }
 `;
 
@@ -23,6 +24,10 @@ const ContactContentTitle = styled.h2`
   font-size: 2.5rem;
   color: var(--electric-blue);
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -47,12 +52,20 @@ const ContactInfo = styled.div`
     font-size: 2rem;
     color: var(--electric-red);
     margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     font-size: 1.7rem;
     color: var(--electric-red);
     margin: 0.5rem 0;
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -63,6 +76,11 @@ const MapContainer = styled.div`
   box-shadow: 0 3px 20px var(--electric-red);
   margin-top: 2rem;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 200px;
+    margin-bottom: 2rem;
+  }
 
   iframe {
     width: 100%;
@@ -85,6 +103,10 @@ const ContactForm = styled.form`
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--text-light);
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   input, textarea {
@@ -96,6 +118,10 @@ const ContactForm = styled.form`
     background: var(--dark-gray);
     color: var(--text-light);
     resize: none;
+
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+    }
   }
 
   button {
@@ -110,6 +136,11 @@ const ContactForm = styled.form`
 
     &:hover {
       background: var(--electric-orange);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      padding: 0.75rem;
     }
   }
 `;

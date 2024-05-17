@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faUserShield, faHeartbeat } from '@fortawesome/free-solid-svg-icons';
@@ -35,8 +35,12 @@ const ChartAndContentContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-grow: 1;
-    width: 100%;
-  
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const BenefitsContent = styled.div`
@@ -44,6 +48,11 @@ const BenefitsContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
 `;
 
 const ChartContainer = styled.div`
@@ -54,6 +63,10 @@ const ChartContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Benefit = styled.div`
@@ -73,7 +86,7 @@ const Benefit = styled.div`
   }
 `;
 
-const data = {
+const initialData = {
     labels: ['Efektywność Czasowa', 'Wzrost Siły Mięśniowej', 'Poprawa Krążenia', 'Wsparcie Rehabilitacji', 'Redukcja Bólu', 'Redukcja Tkanki Tłuszczowej'],
     datasets: [
         {
@@ -86,10 +99,25 @@ const data = {
 
 const Benefits = React.memo(() => {
     const chartRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize(); // Set initial state
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const options = {
         scales: {
             x: {
+                display: !isMobile,
                 ticks: {
                     color: "white",
                     autoSkip: false,
@@ -136,7 +164,6 @@ const Benefits = React.memo(() => {
         }
     };
 
-
     return (
         <BenefitsContainer>
             <TitleContainer>
@@ -158,7 +185,7 @@ const Benefits = React.memo(() => {
                     </Benefit>
                 </BenefitsContent>
                 <ChartContainer>
-                    <Bar ref={chartRef} data={data} options={options} />
+                    <Bar ref={chartRef} data={initialData} options={options} />
                 </ChartContainer>
             </ChartAndContentContainer>
         </BenefitsContainer>

@@ -14,12 +14,20 @@ const AboutSection = styled.section`
   gap: 2rem;
   min-height: calc(100vh - 60px);
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 2rem 5%;
+  }
 `;
 
 const AboutTitle = styled.h2`
   font-size: 2.8rem;
   color: var(--electric-red);
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -53,6 +61,11 @@ const AboutDescription = styled.div`
   text-align: justify;
   max-width: 800px;
   text-indent: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-indent: 1rem;
+  }
 `;
 
 const AboutContent = () => (

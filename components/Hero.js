@@ -17,7 +17,7 @@ const HeroContainer = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    text-align: center; /* Ensure the text remains centered on larger screens */
+    margin-top: 200px;
   }
 `;
 
@@ -30,7 +30,6 @@ const HeroContent = styled.div`
   margin-bottom: 2rem;
 
   @media (min-width: 768px) {
-    margin-bottom: 0;
   }
 `;
 
@@ -39,11 +38,16 @@ const HeroImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 80%;
+    }
   }
 `;
 
@@ -93,7 +97,7 @@ const Hero = () => (
         <HeroContent>
             <Title>Silniejszy i Szybszy z Technologią EMS</Title>
             <Subtitle>Zdobądź przewagę dzięki nowoczesnym metodom treningowym.</Subtitle>
-            <Link href="/contact" passHref>
+            <Link href="/contact" passHref legacyBehavior>
                 <ActionButton>Zapisz się na trening</ActionButton>
             </Link>
         </HeroContent>

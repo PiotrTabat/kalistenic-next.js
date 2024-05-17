@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -64,6 +65,10 @@ const OwnerName = styled.div`
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -84,25 +89,111 @@ const StyledLink = styled.a`
   }
 `;
 
-const Navbar = () => (
-    <NavContainer>
-        <LogoContainer>
-            <Link href="/" passHref>
-                <Logo>KalistenicEMS</Logo>
-            </Link>
-            <LogoImage>
-                <Image src="/images/KrystianLogo1.png" alt="Krystian Kalista Logo" width={50} height={50} />
-            </LogoImage>
-            <OwnerName>Krystian Kalista</OwnerName>
-        </LogoContainer>
-        <NavLinks>
-            <Link href="/" passHref><StyledLink>Strona główna</StyledLink></Link>
-            <Link href="/about" passHref><StyledLink>O mnie</StyledLink></Link>
-            <Link href="/services" passHref><StyledLink>Usługi</StyledLink></Link>
-            <Link href="/prices" passHref><StyledLink>Cennik</StyledLink></Link>
-            <Link href="/contact" passHref><StyledLink>Kontakt</StyledLink></Link>
-        </NavLinks>
-    </NavContainer>
-);
+const HamburgerIcon = styled.div`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    height: 3px;
+    width: 25px;
+    background: var(--text-light);
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: var(--deep-blue);
+  z-index: 1000;
+  padding: 1rem 0;
+
+  ${StyledLink} {
+    margin: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  }
+`;
+
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <NavContainer>
+            <LogoContainer>
+                <Link href="/" passHref legacyBehavior>
+                    <Logo>KalistenicEMS</Logo>
+                </Link>
+                <LogoImage>
+                    <Image
+                        src="/images/KrystianLogo1.png"
+                        alt="Krystian Kalista Logo"
+                        width={50}
+                        height={50}
+                        fetchpriority="high" // Correct property
+                    />
+                </LogoImage>
+                <OwnerName>Krystian Kalista</OwnerName>
+            </LogoContainer>
+            <NavLinks>
+                <Link href="/" passHref legacyBehavior>
+                    <StyledLink>Strona główna</StyledLink>
+                </Link>
+                <Link href="/about" passHref legacyBehavior>
+                    <StyledLink>O mnie</StyledLink>
+                </Link>
+                <Link href="/services" passHref legacyBehavior>
+                    <StyledLink>Usługi</StyledLink>
+                </Link>
+                <Link href="/prices" passHref legacyBehavior>
+                    <StyledLink>Cennik</StyledLink>
+                </Link>
+                <Link href="/contact" passHref legacyBehavior>
+                    <StyledLink>Kontakt</StyledLink>
+                </Link>
+            </NavLinks>
+            <HamburgerIcon onClick={toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </HamburgerIcon>
+            <MobileMenu isOpen={isOpen}>
+                <Link href="/" passHref legacyBehavior>
+                    <StyledLink onClick={toggleMenu}>Strona główna</StyledLink>
+                </Link>
+                <Link href="/about" passHref legacyBehavior>
+                    <StyledLink onClick={toggleMenu}>O mnie</StyledLink>
+                </Link>
+                <Link href="/services" passHref legacyBehavior>
+                    <StyledLink onClick={toggleMenu}>Usługi</StyledLink>
+                </Link>
+                <Link href="/prices" passHref legacyBehavior>
+                    <StyledLink onClick={toggleMenu}>Cennik</StyledLink>
+                </Link>
+                <Link href="/contact" passHref legacyBehavior>
+                    <StyledLink onClick={toggleMenu}>Kontakt</StyledLink>
+                </Link>
+            </MobileMenu>
+        </NavContainer>
+    );
+};
 
 export default Navbar;
