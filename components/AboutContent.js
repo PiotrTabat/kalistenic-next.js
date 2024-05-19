@@ -12,11 +12,11 @@ const AboutSection = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 80px);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 2rem 5%;
+    padding: 4rem 5%;
   }
 `;
 

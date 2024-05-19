@@ -17,7 +17,11 @@ const HeroContainer = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 200px;
+  }
+  @media (max-width: 768px) {
+    height:100vh;
+    margin-top: 55px;
+    
   }
 `;
 
@@ -47,6 +51,15 @@ const HeroImageContainer = styled.div`
   @media (max-width: 768px) {
     img {
       width: 80%;
+      height: 100%;
+      margin-bottom: 4rem;
+    }
+  }
+  @media (max-width: 380px) {
+    img {
+      width: 75%;
+      height: auto;
+      margin-bottom: 6rem;
     }
   }
 `;
@@ -58,7 +71,15 @@ const Title = styled.h1`
 
   @media (min-width: 768px) {
     font-size: 3rem;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  @media (max-width: 380px) {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
 `;
 
@@ -68,7 +89,11 @@ const Subtitle = styled.p`
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 380px) {
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
 `;
 
@@ -90,12 +115,17 @@ const ActionButton = styled.a`
   &:active {
     transform: scale(0.99);
   }
+
+  @media (max-width: 380px) {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
 `;
 
 const Hero = () => (
     <HeroContainer>
         <HeroContent>
-            <Title>Silniejszy i Szybszy z Technologią EMS</Title>
+            <Title>Silniejszy i Szybszy <br/>z<br/> Technologią EMS</Title>
             <Subtitle>Zdobądź przewagę dzięki nowoczesnym metodom treningowym.</Subtitle>
             <Link href="/contact" passHref legacyBehavior>
                 <ActionButton>Zapisz się na trening</ActionButton>

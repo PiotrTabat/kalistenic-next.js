@@ -104,7 +104,7 @@ const WhatEMS = () => (
         <EMSDescription>
             <p>
                 Trening EMS polega na wykonywaniu ćwiczeń w kombinezonie, do którego przyczepione są elektrody. Impuls elektryczny stymuluje mięśnie do pracy.
-                Podczas treningu mięśnie stymulowane są jednocześnie przez elektrody umieszczone aż na 9 grupach mięśniowych. Dzięki temu intensywny trening trwa
+                Podczas treningu mięśnie stymulowane są jednocześnie przez elektrody umieszczone na aż 9 grupach mięśniowych. Dzięki temu intensywny trening trwa
                 zaledwie 30-45 minut, co odpowiada 2 godzinom ćwiczeń na siłowni. Trening EMS to nowoczesna, bardzo efektywna metoda treningowa, która pomaga w krótkim czasie
                 osiągnąć pożądany cel. Trening prowadzony jest w kameralnej sali treningowej, jeden na jeden z trenerem personalnym. Intensywność treningu dostosowywana jest indywidualnie do każdego podopiecznego.
             </p>

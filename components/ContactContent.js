@@ -16,7 +16,7 @@ const ContactSection = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 4rem 5%;
   }
 `;
 

@@ -12,7 +12,7 @@ const ServicesSection = styled.section`
   justify-content: center;
 
   @media (max-width: 768px) {
-    padding: 1rem 5%;
+    padding: 4rem 5%;
   }
 `;
 
