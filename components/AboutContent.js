@@ -73,7 +73,7 @@ const AboutContent = () => (
         <AboutTitle>O mnie</AboutTitle>
         <ContentWrapper>
             <ImageContainer>
-                <Image src={krystianLogo} alt="Krystian Kalista" />
+                <Image src={krystianLogo} alt="Krystian Kalista" fetchpriority="high"/>
             </ImageContainer>
             <AboutDescription>
                 <p>

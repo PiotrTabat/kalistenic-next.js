@@ -162,7 +162,7 @@ const ContactContent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { name, email, message } = formData;
-        window.location.href = `mailto:piotr.tabat1@gmail.com?subject=Kontakt od ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AEmail: ${email}`;
+        window.location.href = `mailto:krystian.kalista@onmet.pl?subject=Kontakt od ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AEmail: ${email}`;
         setTimeout(() => {
             window.location.reload();
         }, 1000);

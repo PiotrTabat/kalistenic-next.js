@@ -70,79 +70,79 @@ const ImageCarousel = () => {
         <CarouselContainer>
             <Carousel autoPlay infiniteLoop showThumbs={false}>
                 <CarouselImage>
-                    <Image src={Image1} alt="EMS Training 1" fill />
+                    <Image src={Image1} alt="EMS Training 1" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image2} alt="EMS Training 2" fill />
+                    <Image src={Image2} alt="EMS Training 2" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image3} alt="EMS Training 3" fill />
+                    <Image src={Image3} alt="EMS Training 3" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image4} alt="EMS Training 4" fill />
+                    <Image src={Image4} alt="EMS Training 4" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image5} alt="EMS Training 5" fill />
+                    <Image src={Image5} alt="EMS Training 5" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image6} alt="EMS Training 6" fill />
+                    <Image src={Image6} alt="EMS Training 6" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image7} alt="EMS Training 7" fill />
+                    <Image src={Image7} alt="EMS Training 7" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image8} alt="EMS Training 8" fill />
+                    <Image src={Image8} alt="EMS Training 8" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image9} alt="EMS Training 9" fill />
+                    <Image src={Image9} alt="EMS Training 9" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image10} alt="EMS Training 10" fill />
+                    <Image src={Image10} alt="EMS Training 10" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image11} alt="EMS Training 11" fill />
+                    <Image src={Image11} alt="EMS Training 11" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image12} alt="EMS Training 12" fill />
+                    <Image src={Image12} alt="EMS Training 12" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image13} alt="EMS Training 13" fill />
+                    <Image src={Image13} alt="EMS Training 13" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image14} alt="EMS Training 14" fill />
+                    <Image src={Image14} alt="EMS Training 14" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image15} alt="EMS Training 15" fill />
+                    <Image src={Image15} alt="EMS Training 15" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image16} alt="EMS Training 16" fill />
+                    <Image src={Image16} alt="EMS Training 16" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image17} alt="EMS Training 17" fill />
+                    <Image src={Image17} alt="EMS Training 17" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image18} alt="EMS Training 18" fill />
+                    <Image src={Image18} alt="EMS Training 18" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image19} alt="EMS Training 19" fill />
+                    <Image src={Image19} alt="EMS Training 19" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image20} alt="EMS Training 20" fill />
+                    <Image src={Image20} alt="EMS Training 20" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image21} alt="EMS Training 21" fill />
+                    <Image src={Image21} alt="EMS Training 21" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image22} alt="EMS Training 22" fill />
+                    <Image src={Image22} alt="EMS Training 22" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image23} alt="EMS Training 23" fill />
+                    <Image src={Image23} alt="EMS Training 23" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image24} alt="EMS Training 24" fill />
+                    <Image src={Image24} alt="EMS Training 24" fetchpriority="high" fill />
                 </CarouselImage>
                 <CarouselImage>
-                    <Image src={Image25} alt="EMS Training 25" fill />
+                    <Image src={Image25} alt="EMS Training 25" fetchpriority="high" fill />
                 </CarouselImage>
             </Carousel>
             <Disclaimer>

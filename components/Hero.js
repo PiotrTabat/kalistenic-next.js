@@ -137,7 +137,7 @@ const Hero = () => (
                 alt="EMS Training"
                 width={550}
                 height={600}
-                priority
+                fetchpriority="high"
             />
         </HeroImageContainer>
     </HeroContainer>
