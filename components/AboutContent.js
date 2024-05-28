@@ -4,20 +4,27 @@ import Image from 'next/image';
 import krystianLogo from '../public/images/KrystianLogo.jpeg';
 
 const AboutSection = styled.section`
-  background: var(--deep-blue);
-  padding: 2rem 10%;
-  color: var(--text-light);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  min-height: calc(100vh - 80px);
-  box-sizing: border-box;
+    background: var(--deep-blue);
+    padding: 2rem 10%;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 90vh;
+    max-height: 400px;
+    box-sizing: border-box;
+    
+    @media(min-width: 769px) {
+        min-height: 600px;
+    }
 
-  @media (max-width: 768px) {
-    padding: 4rem 5%;
-  }
+    @media (max-width: 768px) {
+        padding: 4rem 5%;
+        max-height: none;
+        height: auto;
+    }
 `;
 
 const AboutTitle = styled.h2`

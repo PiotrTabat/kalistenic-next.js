@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faUserShield, faHeartbeat } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import {RequestAsyncStorageWrapper} from "next/dist/server/async-storage/request-async-storage-wrapper";
 
 ChartJS.register(
     CategoryScale,
@@ -15,14 +16,26 @@ ChartJS.register(
 );
 
 const BenefitsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
-  width: 100vw;
-  background: linear-gradient(to right, var(--dark-blue), var(--electric-blue));
-  color: var(--text-light);
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    max-height: 800px;
+    width: 90vw;
+    color: var(--text-light);
+    justify-content: center;
+    
+    @media (max-width: 768px) {
+        max-height: none;
+        height: auto;
+    }
 `;
 
 const TitleContainer = styled.div`
@@ -72,7 +85,7 @@ const ChartContainer = styled.div`
 const Benefit = styled.div`
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   margin-bottom: 2rem;
 
   svg {
@@ -166,6 +179,7 @@ const Benefits = React.memo(() => {
 
     return (
         <BenefitsContainer>
+            <Wrapper>
             <TitleContainer>
                 <h1>Korzyści z EMS</h1>
             </TitleContainer>
@@ -188,6 +202,7 @@ const Benefits = React.memo(() => {
                     <Bar ref={chartRef} data={initialData} options={options} />
                 </ChartContainer>
             </ChartAndContentContainer>
+            </Wrapper>
         </BenefitsContainer>
     );
 });

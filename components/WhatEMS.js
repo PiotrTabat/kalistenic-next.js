@@ -2,19 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const EMSSection = styled.section`
-  background: var(--deep-blue);
-  padding: 2rem 10%;
-  color: var(--text-light);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+    background: var(--deep-blue);
+    padding: 2rem 10%;
+    color: var(--text-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   height: auto;
+    max-height: 1700px;
 
-  @media (max-width: 768px) {
-    padding: 2rem 5%;
-  }
+    @media (max-width: 768px) {
+        padding: 2rem 5%;
+        max-height: none;
+    }
 `;
 
 const EMSTitle = styled.h2`
@@ -81,6 +84,12 @@ const TwoColumnGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 100%;
+    
+    div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
 
   div p {
     font-size: 1.4rem;

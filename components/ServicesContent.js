@@ -2,18 +2,26 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ServicesSection = styled.section`
-  background: var(--deep-blue);
-  padding: 1rem 5%;
-  color: var(--text-light);
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    background: var(--deep-blue);
+    padding: 1rem 5%;
+    color: var(--text-light);
+    text-align: center;
+    height: 100vh;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media(min-width: 769px) {
+        min-height: 800px;
+    }
 
-  @media (max-width: 768px) {
-    padding: 4rem 5%;
-  }
+    @media (max-width: 768px) {
+        padding: 4rem 5%;
+        max-height: none;
+        height: auto;
+        margin-top: 2rem;
+    }
 `;
 
 const ServicesTitle = styled.h2`

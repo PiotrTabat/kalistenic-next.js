@@ -38,6 +38,10 @@ module.exports = (phase, { defaultConfig }) => {
                     source: '/api/:path*',
                     destination: 'https://api.example.com/:path*',  // Przykład przekierowania API
                 },
+                {
+                    source: '/sitemap.xml',
+                    destination: '/sitemap.xml',
+                },
             ];
         },
         async headers() {
