@@ -5,6 +5,8 @@ export const GlobalStyles = createGlobalStyle`
         --deep-blue: #000118;
         --dark-blue: #00091c;
         --green: #1e7e04;
+        --dark-red: #8b0000;
+        --dark-green: #015c01;
         --electric-red: #FF0000;
         --electric-orange: #FF4500;
         --electric-yellow: #FFD700;

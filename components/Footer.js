@@ -5,10 +5,10 @@ const FooterContainer = styled.footer`
     text-align: center;
     background: var(--deep-blue);
     color: var(--text-light);
-    margin-top: 50px;
 
     @media (max-width: 768px) {
         font-size: 0.75rem;
+        margin-top: 50px;
     }
 `;
 

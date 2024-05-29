@@ -8,6 +8,7 @@ import ServicesContent from '../components/ServicesContent';
 import ContactContent from '../components/ContactContent';
 import Footer from '../components/Footer';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQContent from "../components/FAQContent";
 
 const Home = () => {
     return (
@@ -30,6 +31,7 @@ const Home = () => {
             <Benefits />
             <ServicesContent />
             <AboutContent />
+            <FAQContent />
             <ContactContent />
             <Footer />
         </>

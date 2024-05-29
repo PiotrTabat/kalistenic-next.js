@@ -14,6 +14,7 @@ const ServicesSection = styled.section`
     
     @media(min-width: 769px) {
         min-height: 800px;
+        margin-top: 4rem;
     }
 
     @media (max-width: 768px) {

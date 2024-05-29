@@ -16,6 +16,7 @@ const ContactSection = styled.section`
     @media(min-width: 769px) {
         min-height: 800px;
        justify-content: center;
+        margin-top: 2rem;
     }
 
     @media (max-width: 768px) {
