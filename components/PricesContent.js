@@ -2,21 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PricesSection = styled.section`
-  background: var(--deep-blue);
-  padding: 1.5rem 5%;
-  color: var(--text-light);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  min-height: 100vh;
-  box-sizing: border-box;
+    background: var(--deep-blue);
+    padding: 1.5rem 5%;
+    margin-top: 80px;
+    color: var(--text-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
 
-  @media (max-width: 768px) {
-    padding: 1rem 5%;
-  }
+    @media (max-width: 768px) {
+        gap: 1rem;
+        padding: 4rem 10%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        
+    }
 `;
 
 const PricesTitle = styled.h2`
@@ -50,7 +56,7 @@ const PriceList = styled.ul`
 
 const PriceItem = styled.li`
   background: var(--text-dark);
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   color: var(--text-light);
@@ -67,17 +73,18 @@ const PriceItem = styled.li`
   }
   
     @media (max-width: 768px) {
-    padding: 0.5rem 1rem;
+    padding: 1.5rem 1rem;
+    border-left: 5px solid var(--electric-orange);
     }
 `;
 
 const PriceLabel = styled.span`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   flex: 1;
   text-align: left;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -87,7 +94,7 @@ const PriceAmount = styled.span`
   color: var(--electric-green);
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -105,7 +112,7 @@ const AdditionalInfo = styled.p`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 100%;
   }
 `;

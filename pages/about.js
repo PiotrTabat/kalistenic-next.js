@@ -5,7 +5,7 @@ import Head from 'next/head';
 const AboutContainer = styled.div`
     padding: 20px;
     max-width: 90vw;
-    margin: 90px auto;
+    margin: 80px auto;
     background: var(--deep-blue);
     color: var(--text-light);
     border-radius: 10px;

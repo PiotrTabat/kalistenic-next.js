@@ -159,11 +159,11 @@ const MobileMenu = styled.div`
     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     padding: ${({ isOpen }) => (isOpen ? '25px 0' : '0 0')};
     border-radius: 0 0 20px 20px;
-    box-shadow: ${({ isOpen }) => (isOpen ? '0 10px 15px -5px rgba(0, 0, 0, 0.3), 0 10px 15px -5px var(--text-electric-green), 0 10px 15px -5px var(--text-electric-orange)' : 'none')};
+    box-shadow: ${({ isOpen }) => (isOpen ? '0 10px 15px -5px rgba(0, 0, 0, 0.3), 0 15px 15px -5px var(--text-electric-green), 0 10px 15px -5px var(--electric-red)' : 'none')};
 `;
 
 const MobileMenuLink = styled.a`
-    color: var(--metallic-silver);
+    color: var(--text-light);
     text-decoration: none;
     margin: 20px 0;
     padding: 15px 20px;

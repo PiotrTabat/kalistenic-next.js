@@ -7,23 +7,23 @@ const ContactSection = styled.section`
     color: var(--text-light);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
-    height: 100vh;
     max-height: 800px;
     box-sizing: border-box;
 
     @media(min-width: 769px) {
         min-height: 800px;
+       justify-content: center;
     }
 
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
-        padding: 2rem 5%;
+        padding: 5rem 5%;
         max-height: none;
-        height: auto;
+        height: 100vh;
     }
 `;
 
@@ -40,7 +40,7 @@ const ContactContentTitle = styled.h2`
 const ContentWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 1200px;
     gap: 2rem;
@@ -89,9 +89,9 @@ const MapContainer = styled.div`
     @media (max-width: 768px) {
         height: 300px;
         margin-bottom: 2rem;
-        width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     iframe {
@@ -100,7 +100,8 @@ const MapContainer = styled.div`
         border: 0;
 
         @media (max-width: 768px) {
-            width: 100%;
+            height: 300px;
+            justify-content: center;
         }
     }
 `;
@@ -109,7 +110,7 @@ const ContactForm = styled.form`
     flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 450px;
+    max-width: 400px;
     background: var(--text-dark);
     padding: 2rem;
     border-radius: 10px;

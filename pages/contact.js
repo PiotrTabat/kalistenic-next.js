@@ -3,9 +3,9 @@ import Head from 'next/head';
 import styled from 'styled-components';
 
 const ContaktContainer = styled.div`
-    padding: 20px;
     max-width: 90vw;
-    margin: 90px auto;
+    height: 70vh;
+    padding: 6rem 10%;
     background: var(--deep-blue);
     color: var(--text-light);
     border-radius: 10px;
