@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FAQSection = styled.section`
     background: var(--deep-blue);
-    padding: 1.5rem 5%;
+    padding: 2rem 5%;
     margin-top: 80px;
     color: var(--text-light);
     text-align: center;
@@ -24,71 +24,72 @@ const FAQSection = styled.section`
 `;
 
 const FAQTitle = styled.h2`
-  font-size: 2.5rem;
-  color: var(--electric-green);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 0 2rem;
+    font-size: 2.5rem;
+    color: var(--electric-green);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
-const FAQList = styled.ul`
-  font-size: 1.2rem;
-  line-height: 1.8;
-  text-align: left;
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  max-width: 800px;
-  margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+const FAQList = styled.div`
+    width: 100%;
+    max-width: 800px;
 `;
 
-const FAQItem = styled.li`
-  background: var(--text-dark);
-  margin: 1rem 0;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  color: var(--text-light);
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  border-left: 8px solid var(--electric-green);
+const FAQItem = styled.div`
+    background: var(--text-dark);
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-left: 8px solid var(--electric-orange);
 
-  &:hover {
-    background: linear-gradient(145deg, var(--dark-green), var(--green));
-    transform: translateY(-3px);
-  }
+    &:hover {
+        background: var(--electric-red);
+    }
 
-  @media (max-width: 768px) {
-    padding: 1.5rem 1rem;
-    border-left: 5px solid var(--electric-green);
-  }
+    @media (max-width: 768px) {
+        padding: 1.5rem 1rem;
+        border-left: 5px solid var(--electric-orange);
+    }
 `;
 
-const Question = styled.span`
-  font-size: 1.2rem;
-  flex: 1;
-  text-align: left;
-
-  @media (max-width: 768px) {
+const Question = styled.div`
     font-size: 1.5rem;
-  }
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `;
 
-const Answer = styled.p`
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin-top: 0.5rem;
+const Answer = styled.div`
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    max-height: ${({ isOpen }) => (isOpen ? '1000px' : '0')};
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+`;
+
+const ToggleIcon = styled.span`
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -96,6 +97,12 @@ const Answer = styled.p`
 `;
 
 const FAQContent = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const handleToggle = index => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
     const faqs = [
         {
             question: "Czym jest kalistenika?",
@@ -124,9 +131,12 @@ const FAQContent = () => {
             <FAQTitle>FAQ</FAQTitle>
             <FAQList>
                 {faqs.map((faq, index) => (
-                    <FAQItem key={index}>
-                        <Question>{faq.question}</Question>
-                        <Answer>{faq.answer}</Answer>
+                    <FAQItem key={index} onClick={() => handleToggle(index)}>
+                        <Question>
+                            {faq.question}
+                            <ToggleIcon isOpen={openIndex === index}>{openIndex === index ? '-' : '+'}</ToggleIcon>
+                        </Question>
+                        <Answer isOpen={openIndex === index}>{faq.answer}</Answer>
                     </FAQItem>
                 ))}
             </FAQList>
