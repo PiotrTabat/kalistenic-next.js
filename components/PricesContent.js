@@ -21,6 +21,8 @@ const PricesSection = styled.section`
         align-items: center;
         justify-content: center;
         display: flex;
+        flex-direction: column;
+        height: auto;
         
     }
 `;
