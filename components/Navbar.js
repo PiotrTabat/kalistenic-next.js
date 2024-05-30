@@ -131,7 +131,6 @@ const Navbar = () => {
                         width={58}
                         height={58}
                         quality={100}
-                        fetchpriority="high"
                     />
                 </LogoImage>
                 <OwnerName>Krystian Kalista</OwnerName>

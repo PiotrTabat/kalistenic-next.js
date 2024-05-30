@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faUserShield, faHeartbeat } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import {RequestAsyncStorageWrapper} from "next/dist/server/async-storage/request-async-storage-wrapper";
 
 ChartJS.register(
     CategoryScale,
@@ -31,7 +30,7 @@ const Wrapper = styled.div`
     width: 90vw;
     color: var(--text-light);
     justify-content: center;
-    
+
     @media (max-width: 768px) {
         max-height: none;
         height: auto;
@@ -39,64 +38,64 @@ const Wrapper = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  width: 100%;
-  text-align: center;
-  margin-bottom: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
 `;
 
 const ChartAndContentContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-grow: 1;
-  width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 100%;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const BenefitsContent = styled.div`
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  @media (max-width: 768px) {
-    width: 80%;
-    margin-bottom: 2rem;
-  }
+    @media (max-width: 768px) {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
 `;
 
 const ChartContainer = styled.div`
-  width: 70%;
-  background: var(--deep-blue);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 70%;
+    background: var(--deep-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const Benefit = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
 
-  svg {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-  }
+    svg {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
 
-  h3 {
-    color: var(--text-light);
-  }
+    h3 {
+        color: var(--text-light);
+    }
 `;
 
 const initialData = {
@@ -180,28 +179,28 @@ const Benefits = React.memo(() => {
     return (
         <BenefitsContainer>
             <Wrapper>
-            <TitleContainer>
-                <h1>Korzyści z EMS</h1>
-            </TitleContainer>
-            <ChartAndContentContainer>
-                <BenefitsContent>
-                    <Benefit>
-                        <FontAwesomeIcon icon={faBolt} color="#FFD700" aria-label="Szybkie rezultaty" />
-                        <h3>Szybkie rezultaty</h3>
-                    </Benefit>
-                    <Benefit>
-                        <FontAwesomeIcon icon={faUserShield} color="#007FFF" aria-label="Bezpieczne dla stawów" />
-                        <h3>Bezpieczne dla stawów</h3>
-                    </Benefit>
-                    <Benefit>
-                        <FontAwesomeIcon icon={faHeartbeat} color="#00FF00" aria-label="Personalizowane treningi" />
-                        <h3>Personalizowane treningi</h3>
-                    </Benefit>
-                </BenefitsContent>
-                <ChartContainer>
-                    <Bar ref={chartRef} data={initialData} options={options} />
-                </ChartContainer>
-            </ChartAndContentContainer>
+                <TitleContainer>
+                    <h1>Korzyści z EMS</h1>
+                </TitleContainer>
+                <ChartAndContentContainer>
+                    <BenefitsContent>
+                        <Benefit>
+                            <FontAwesomeIcon icon={faBolt} color="#FFD700" aria-label="Szybkie rezultaty" />
+                            <h3>Szybkie rezultaty</h3>
+                        </Benefit>
+                        <Benefit>
+                            <FontAwesomeIcon icon={faUserShield} color="#007FFF" aria-label="Bezpieczne dla stawów" />
+                            <h3>Bezpieczne dla stawów</h3>
+                        </Benefit>
+                        <Benefit>
+                            <FontAwesomeIcon icon={faHeartbeat} color="#00FF00" aria-label="Personalizowane treningi" />
+                            <h3>Personalizowane treningi</h3>
+                        </Benefit>
+                    </BenefitsContent>
+                    <ChartContainer>
+                        <Bar ref={chartRef} data={initialData} options={options} />
+                    </ChartContainer>
+                </ChartAndContentContainer>
             </Wrapper>
         </BenefitsContainer>
     );

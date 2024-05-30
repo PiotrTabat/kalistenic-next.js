@@ -10,8 +10,9 @@ const ContactSection = styled.section`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    max-height: 800px;
+    min-height: 80vh;
     box-sizing: border-box;
+    
 
     @media(min-width: 769px) {
         min-height: 800px;
@@ -24,7 +25,7 @@ const ContactSection = styled.section`
         align-items: center;
         padding: 5rem 5%;
         max-height: none;
-        height: 100vh;
+        min-height: auto;
     }
 `;
 

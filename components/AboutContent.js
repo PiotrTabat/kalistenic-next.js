@@ -15,7 +15,7 @@ const AboutSection = styled.section`
     height: 90vh;
     max-height: 400px;
     box-sizing: border-box;
-    
+
     @media(min-width: 769px) {
         min-height: 600px;
         margin-top: 4rem;
@@ -29,51 +29,51 @@ const AboutSection = styled.section`
 `;
 
 const AboutTitle = styled.h2`
-  font-size: 2.8rem;
-  color: var(--electric-red);
-  margin-bottom: 1rem;
+    font-size: 2.8rem;
+    color: var(--electric-red);
+    margin-bottom: 1rem;
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const ImageContainer = styled.div`
-  flex: 1;
-  max-width: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  img {
-    width: 100%;
-    height: auto;
-  }
+    img {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 const AboutDescription = styled.div`
-  flex: 2;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  text-align: justify;
-  max-width: 800px;
-  text-indent: 2rem;
+    flex: 2;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 800px;
+    text-indent: 2rem;
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    text-indent: 1rem;
-  }
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        text-indent: 1rem;
+    }
 `;
 
 const AboutContent = () => (
@@ -81,7 +81,7 @@ const AboutContent = () => (
         <AboutTitle>O mnie</AboutTitle>
         <ContentWrapper>
             <ImageContainer>
-                <Image src={krystianLogo} alt="Krystian Kalista" fetchpriority="high"/>
+                <Image src={krystianLogo} alt="Krystian Kalista" priority />
             </ImageContainer>
             <AboutDescription>
                 <p>

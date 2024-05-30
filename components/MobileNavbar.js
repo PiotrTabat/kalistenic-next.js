@@ -228,7 +228,7 @@ const MobileNavbar = () => {
                         alt="Krystian Kalista Logo"
                         width={50}
                         height={50}
-                        fetchpriority="high"
+                        priority
                     />
                 </LogoImage>
                 <OwnerNameContainer>

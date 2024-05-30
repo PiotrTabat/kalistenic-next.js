@@ -189,7 +189,7 @@ const Hero = () => (
                 <Image
                     src={heroImg}
                     alt="EMS Training"
-                    fetchpriority="high"
+                    priority
                 />
             </HeroImageContainer>
         </Wrapper>

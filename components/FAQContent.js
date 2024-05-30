@@ -13,6 +13,7 @@ const FAQSection = styled.section`
     align-items: center;
     gap: 2rem;
     box-sizing: border-box;
+    min-height: 80vh;
 
     @media (max-width: 768px) {
         gap: 1rem;
@@ -20,6 +21,8 @@ const FAQSection = styled.section`
         align-items: center;
         justify-content: center;
         display: flex;
+        min-height: auto;
+        margin-top: 20px;
     }
 `;
 
@@ -77,7 +80,7 @@ const Question = styled.div`
 const Answer = styled.div`
     font-size: 1.1rem;
     margin-top: 0.5rem;
-    max-height: ${({ isOpen }) => (isOpen ? '1000px' : '0')};
+    max-height: ${({ $isOpen }) => ($isOpen ? '1000px' : '0')};
     overflow: hidden;
     transition: max-height 0.3s ease;
 
@@ -87,19 +90,19 @@ const Answer = styled.div`
 `;
 
 const ToggleIcon = styled.span`
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
-  transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    transform: ${({ $isOpen }) => ($isOpen ? 'rotate(45deg)' : 'rotate(0)')};
 
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const FAQContent = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
-    const handleToggle = index => {
+    const handleToggle = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
@@ -134,9 +137,9 @@ const FAQContent = () => {
                     <FAQItem key={index} onClick={() => handleToggle(index)}>
                         <Question>
                             {faq.question}
-                            <ToggleIcon isOpen={openIndex === index}>{openIndex === index ? '-' : '+'}</ToggleIcon>
+                            <ToggleIcon $isOpen={openIndex === index}>{openIndex === index ? '-' : '+'}</ToggleIcon>
                         </Question>
-                        <Answer isOpen={openIndex === index}>{faq.answer}</Answer>
+                        <Answer $isOpen={openIndex === index}>{faq.answer}</Answer>
                     </FAQItem>
                 ))}
             </FAQList>
